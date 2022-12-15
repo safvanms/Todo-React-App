@@ -1,0 +1,71 @@
+.task {
+     /* min-width: 100%; */
+     background: #262626;
+     border: 1px solid #333333;
+     padding: 16px;
+     border-radius: 8px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 12px;
+    margin: 0px 5px 0px 5px;
+   }
+
+   .task-light {
+     /* min-width: 100%; */
+     background: #efefef;
+     border: 1px solid #333333;
+     padding: 16px;
+     border-radius: 8px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 12px;
+    margin: 0px 5px 0px 5px;
+   }
+   
+   .task p {
+     font-size: 13px;
+     line-height: 19px;
+     color: #F2F2F2;
+     margin-right: auto;
+   }
+
+   .task-light p {
+     font-size: 13px;
+     line-height: 19px;
+     color: black;
+     margin-right: auto;
+     font-weight: 600;
+   }
+   
+   p.textCompleted {
+     color: #808080;
+     text-decoration: line-through;
+   }
+   
+   .check {
+     width: 18px;
+     height: 18px;
+     background: none;
+     border: none;
+   }
+   
+   .check div {
+     width: 100%;
+     height: 100%;
+     border-radius: 999px;
+     border: 2px solid #4caf50;
+   }
+   
+   .check svg {
+     width: 100%;
+     height: 100%;
+     color: #4caf50;
+   }
+   
+   .delete {
+     background: none;
+     border: none;
+     color: #808080;
+   }

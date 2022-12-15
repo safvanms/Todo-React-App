@@ -1,0 +1,139 @@
+.header {
+     background-color:#0d0d0d ;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100px;
+     position: relative ; 
+}
+
+.header-light{
+     background-color:#efefef ;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100px;
+     position: relative ; 
+}
+
+.logo {
+     width: 39px;
+}
+
+.to-sec {
+     font-size: 37px;
+     margin-left: 8px;
+     font-size: 'montserrat';
+     color: rgb(160, 160, 160);
+}
+
+.to-sec-light {
+     font-size: 37px;
+     margin-left: 8px;
+     font-size: 'montserrat';
+     color: rgb(0, 0, 0);
+}
+
+.do-sec {
+     font-size: 37px;
+     margin-left: 2px;
+     font-size: 'montserrat';
+     color: #4caf50;
+}
+
+.task-form {
+     position: absolute;
+     height: 50px;
+     bottom: -27px;
+     width: 100%;
+     max-width: 555px;
+     display: flex;
+     gap: 8px;
+     padding: 0px 5px 0px 5px;
+}
+
+.task-form-light {
+     position: absolute;
+     height: 50px;
+     bottom: -27px;
+     width: 100%;
+     max-width: 555px;
+     display: flex;
+     gap: 8px;
+     padding: 0px 5px 0px 5px;
+}
+
+.task-form input{
+     height: 100%;
+     flex: 1;
+     color: #fff;
+     background: #262626;
+     border: 1px solid #0d0d0d;
+     border-radius: 12px;
+     padding: 0 16px;
+     font-size: 16px;
+}
+
+.task-form-light input{
+     height: 100%;
+     flex: 1;
+     background: #efefef;
+     border: 1px solid #0d0d0d;
+     border-radius: 12px;
+     padding: 0 16px;
+     font-size: 16px;
+}
+
+.task-form input::placeholder {
+     color: #808080;
+}
+
+.task-form-light input::placeholder {
+     color: #808080;
+}
+
+.task-form button {
+     height: 100%;
+     padding: 0 16px;
+     background: #3785c9;
+     color: #fff;
+     border: none;
+     border-radius: 12px;
+     display: flex;
+     align-items: center;
+     gap: 6px;
+     font-weight: 100;
+     font-size: 14px;
+}
+
+.task-form-light button {
+     height: 100%;
+     padding: 0 16px;
+     background: #3785c9;
+     color: #fff;
+     border: none;
+     border-radius: 12px;
+     display: flex;
+     align-items: center;
+     gap: 6px;
+     font-weight: 100;
+     font-size: 14px;
+}
+
+
+.darkMode {
+     font-size: 17px;
+     border: none;
+     color: white;
+     background-color: transparent;
+     margin: 10px 0px 0px 10px ;
+}
+
+.lightMode {
+     font-size: 17px;
+     border: none;
+     color: rgb(0, 0, 0);
+     background-color: transparent;
+     margin: 10px 0px 0px 10px ;
+
+}

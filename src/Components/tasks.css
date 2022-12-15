@@ -1,0 +1,66 @@
+.tasks {
+  width: 100%;
+  max-width: 555px;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 0.1rem;
+  
+}
+
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.head > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.head > p {
+  color: #4ea8de;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.textBlue {
+  color: #3785c9;
+  margin: 0px 5px 0px 5px;
+}
+
+.textGreen {
+  color: #04621b;
+  margin: 0px 5px 0px 5px;
+}
+
+.head span {
+  background: #333333;
+  color: #d9d9d9;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0px 5px 0px 0px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.all-delete {
+  width: 100px;
+  font-size: 13px;
+  margin: 15px 10px 0px 0px ;
+  float: right;
+  font-weight: 500;
+  color: #3785c9;
+  background-color:rgba(45, 44, 44, 0.376) ;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+}
