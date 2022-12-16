@@ -55,12 +55,17 @@
 
 .all-delete {
   width: 100px;
+  height:30px;
   font-size: 13px;
-  margin: 15px 10px 0px 0px ;
+  margin: 15px 10px 20px 0px ;
   float: right;
   font-weight: 500;
   color: #3785c9;
-  background-color:rgba(45, 44, 44, 0.376) ;
+  background-color:transparent ;
   border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;
+}
+
+.black-text {
+  color:#161616;
 }

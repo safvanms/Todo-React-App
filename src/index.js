@@ -15,6 +15,8 @@ function App() {
         setDark(prevDark => !prevDark)
     }
 
+    const [editTodo, setEditTodo] = React.useState(null)
+
     const [tasks, setTasks] = React.useState([])
 
     function loadSavedTasks() {
@@ -33,6 +35,11 @@ function App() {
         localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newTasks))
     }
 
+    function handleEdit(taskId) {
+        const findTask = tasks.find((task)=> task.id === taskId);
+        setEditTodo(findTask);
+        console.log("edit clicked")        
+    }
 
 
     function addTask(taskTitle) {
@@ -45,8 +52,6 @@ function App() {
             }
         ])
     }
-
-
 
     function toggleTaskCompletedById(taskId) {
         const newTasks = tasks.map(task => {
@@ -61,10 +66,31 @@ function App() {
         setTasksAndSave(newTasks);
     }
 
+
+
     function deleteTaskById(taskId) {
         const newTasks = tasks.filter(task => task.id !== taskId);
         if (newTasks) {
-            alert("Task Deleted !")
+            let timerInterval
+            Swal.fire({
+                title: 'deleting..',
+                timer: 500,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading()
+                    const b = Swal.getHtmlContainer().querySelector('b')
+                    timerInterval = setInterval(() => {
+                        b.textContent = Swal.getTimerLeft()
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+                }
+            }).then((result) => {
+                /* Read more about handling dismissals below */
+                if (result.dismiss === Swal.DismissReason.timer) {
+                }
+            })
         }
         setTasksAndSave(newTasks);
     }
@@ -73,7 +99,7 @@ function App() {
         const newTasks = tasks.filter(task => task.id !== taskId);
         if (newTasks) {
             Swal.fire({
-                className:'alert',
+                className: 'alert',
                 title: 'Are you sure?',
                 text: "You won't be able to revert this!",
                 icon: 'warning',
@@ -103,6 +129,9 @@ function App() {
                 dark={dark}
                 onAddTask={addTask}
                 darkMode={darkMode}
+                editTodo={editTodo}
+                setEditTodo={setEditTodo}
+                tasks={tasks}
             />
 
             <Tasks
@@ -113,6 +142,7 @@ function App() {
                 darkMode={darkMode}
                 onClear={deleteAllTaskById}
                 task={tasks.id}
+                onEdit={handleEdit}
             />
         </div>
     )
