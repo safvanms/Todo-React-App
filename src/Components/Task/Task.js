@@ -5,31 +5,38 @@ import { CiEdit } from 'react-icons/ci';
 import { BsFillCheckCircleFill } from 'react-icons/bs';
 
 
-export default function Task({ task, onComplete, onDelete, dark, onEdit }) {
+export default function Task({ task, onComplete, onDelete, dark, onEdit, editTodo }) {
 
 
 
      return (
+          <div className={editTodo ? "blur" : ""}>
+               <div className={dark ? 'task' : 'task-light'}>
+                    <button className='check' onClick={() => onComplete(task.id)}>
+                         {task.isCompleted ? <BsFillCheckCircleFill /> : <div />}
+                    </button>
+                    <p className={task.isCompleted ? 'textCompleted' : ""}> {task.title}</p>
 
-          <div className={dark ? 'task' : 'task-light'}>
-               <button className='check' onClick={() => onComplete(task.id)}>
-                    {task.isCompleted ? <BsFillCheckCircleFill /> : <div />}
-               </button>
-               <p className={task.isCompleted ? 'textCompleted' : ""}> {task.title}</p>
-               <button
-                    className='delete'
-                    onClick={() => onEdit(task.id)}
-               >
-                    <CiEdit size={20} />
-               </button>
 
-               <button
-                    className='delete'
-                    onClick={() => onDelete(task.id)}
-               >
-                    <MdDelete size={20} />
-               </button>
+                    <button
+                         className='delete'
+                         onClick={() => onEdit(task.id)}
+                    >
+                         <CiEdit size={20} />
+                    </button>
 
+
+
+                    <button
+                         className='delete'
+                         onClick={() => onDelete(task.id)}
+                    >
+                         <MdDelete size={20} />
+                    </button>
+
+
+
+               </div>
           </div>
      )
 }

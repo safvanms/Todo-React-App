@@ -93,10 +93,24 @@
      color: #808080;
 }
 
-.task-form button {
+.blue-btn {
      height: 100%;
      padding: 0 16px;
      background: #3785c9;
+     color: #fff;
+     border: none;
+     border-radius: 12px;
+     display: flex;
+     align-items: center;
+     gap: 6px;
+     font-weight: 100;
+     font-size: 14px;
+}
+
+.grn-btn {
+     height: 100%;
+     padding: 0 16px;
+     background: #4caf50;
      color: #fff;
      border: none;
      border-radius: 12px;

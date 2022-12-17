@@ -9,26 +9,27 @@ const LOCAL_STORAGE_KEY = "todo:savedTasks";
 
 function App() {
 
-    const [dark, setDark] = React.useState(true);
+    // for making the app darkmode and light monde 
 
+    const [dark, setDark] = React.useState(true);
     function darkMode() {
         setDark(prevDark => !prevDark)
     }
 
+    // editing the todo 
     const [editTodo, setEditTodo] = React.useState(null)
 
+    //useState for todo tasks
     const [tasks, setTasks] = React.useState([])
 
+    // for storing the todo tasks in the local storage 
     function loadSavedTasks() {
         const saved = localStorage.getItem(LOCAL_STORAGE_KEY)
-        console.log(saved)
-        if(saved===undefined)
-        return
+        if (saved === undefined)
+            return
         if (saved) setTasks(JSON.parse(saved));
-        
+
     }
-
-
 
     useEffect(() => {
         loadSavedTasks();
@@ -43,11 +44,14 @@ function App() {
 
     function handleEdit(taskId) {
         const findTask = tasks.find((task) => task.id === taskId);
-        setEditTodo(findTask);        
+        setEditTodo(findTask);
+
+        console.log("edit clicked");
     }
-   
 
 
+
+    // here the function for add the todo 
     function addTask(taskTitle) {
         setTasksAndSave([
             ...tasks,
@@ -58,7 +62,7 @@ function App() {
             }
 
         ])
-        
+
     }
 
     function toggleTaskCompletedById(taskId) {
@@ -133,6 +137,7 @@ function App() {
 
     return (
         <div className={dark ? 'body' : 'container-light'}>
+
             <Header
                 dark={dark}
                 onAddTask={addTask}
@@ -151,13 +156,12 @@ function App() {
                 onClear={deleteAllTaskById}
                 task={tasks.id}
                 onEdit={handleEdit}
+                editTodo={editTodo}
             />
+
         </div>
     )
 }
 
 
 ReactDOM.render(<App />, document.getElementById('root'));
-
-
-

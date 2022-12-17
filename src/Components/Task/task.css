@@ -72,3 +72,7 @@
    .delete:hover {
     color: #000000;
    }
+
+   .blur {
+    opacity: .4;
+   }
