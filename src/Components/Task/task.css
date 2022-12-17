@@ -68,3 +68,7 @@
      border: none;
      color: #808080;
    }
+
+   .delete:hover {
+    color: #000000;
+   }

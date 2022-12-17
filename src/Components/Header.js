@@ -5,18 +5,18 @@ import { HiMoon } from 'react-icons/hi';
 import { BsSunFill } from 'react-icons/bs';
 import '../Components/header.css';
 
-export default function Header({ tasks, onAddTask, dark, darkMode, editTodo, setEditTodo }) {
+export default function Header({ tasks, onAddTask, dark, darkMode, editTodo, setEditTodo ,editSubmit }) {
 
 
 
 
      const [title, setTitle] = React.useState('')
 
-     const updateTodo = (title, id, isCompleted) => {
+     const updateTodo = (title, taskId, isCompleted) => {
           const newTodo = tasks.map((task) =>
-               task.id === id ? { title, id, isCompleted } : task
+               task.id === taskId ? { title, taskId, isCompleted } : task
           )
-          setTitle(newTodo);
+          setTitle(newTodo.title);
           setEditTodo("");
      }
 
@@ -26,13 +26,16 @@ export default function Header({ tasks, onAddTask, dark, darkMode, editTodo, set
                onAddTask(title);
                setTitle('');
           } else {
-               updateTodo({...tasks}, title, editTodo.id, editTodo.isCompleted)
+               updateTodo(  title, editTodo.id, editTodo.isCompleted)
           }
           console.log("current state", title)
           console.log("editTodo.id", editTodo.id)
           console.log("editTodo.completed", editTodo.isCompleted)
      }
 
+     
+
+     
      function onChangeTitle(event) {
           setTitle(event.target.value);
      }
@@ -59,7 +62,6 @@ export default function Header({ tasks, onAddTask, dark, darkMode, editTodo, set
                          placeholder='Add a new task'
                          value={title}
                          onChange={onChangeTitle}
-                         on
                          required
                     />
 

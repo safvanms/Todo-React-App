@@ -66,6 +66,10 @@
   border-radius: 5px;
 }
 
+.all-delete:hover {
+  background-color: #161616;
+}
+
 .black-text {
   color:#161616;
 }

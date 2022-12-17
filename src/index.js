@@ -21,25 +21,31 @@ function App() {
 
     function loadSavedTasks() {
         const saved = localStorage.getItem(LOCAL_STORAGE_KEY)
-        if (saved) {
-            setTasks(JSON.parse(saved));
-        }
+        console.log(saved)
+        if(saved===undefined)
+        return
+        if (saved) setTasks(JSON.parse(saved));
+        
     }
+
+
 
     useEffect(() => {
         loadSavedTasks();
     }, [])
+
 
     function setTasksAndSave(newTasks) {
         setTasks(newTasks)
         localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newTasks))
     }
 
+
     function handleEdit(taskId) {
-        const findTask = tasks.find((task)=> task.id === taskId);
-        setEditTodo(findTask);
-        console.log("edit clicked")        
+        const findTask = tasks.find((task) => task.id === taskId);
+        setEditTodo(findTask);        
     }
+   
 
 
     function addTask(taskTitle) {
@@ -50,7 +56,9 @@ function App() {
                 title: taskTitle,
                 isCompleted: false
             }
+
         ])
+        
     }
 
     function toggleTaskCompletedById(taskId) {

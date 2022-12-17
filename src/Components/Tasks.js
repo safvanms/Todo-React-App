@@ -1,10 +1,10 @@
 import Task from './Task/Task';
 import '../Components/tasks.css';
 
-export default function Tasks({ tasks, onComplete, onDelete, dark, onClear , onEdit }) {
+export default function Tasks({ tasks, onComplete, onDelete, dark, onClear , onEdit  }) {
 
      const tasksQuantity = tasks.length;
-     const completed = tasks.filter(task => task.isCompleted).length;
+     const completed = tasks.filter((task) =>task.isCompleted).length;
 
      return (
           <section className='tasks'>
@@ -21,7 +21,7 @@ export default function Tasks({ tasks, onComplete, onDelete, dark, onClear , onE
                     </header>
 
 
-               <div className='list'>
+               <div className="list">
                     {tasks.map(task => (
                          <Task
                               key={task.id}
