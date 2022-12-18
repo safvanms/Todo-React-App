@@ -75,3 +75,7 @@
 .black-text {
   color:#161616;
 }
+
+.blur {
+  opacity: .3;
+ }

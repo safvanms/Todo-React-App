@@ -8,18 +8,21 @@ export default function Tasks({ tasks, onComplete, onDelete, dark, onClear, onEd
 
      return (
           <section className='tasks'>
-               <header className='head'>
-                    <div>
-                         <p className={dark ? 'textBlue' : 'textGreen'}>Tasks :</p>
-                         {tasksQuantity ? <span>{tasksQuantity}</span> : <p className={dark ? '' : 'black-text'}>No Tasks</p>}
-                    </div>
-                    {tasksQuantity ?
-                         <div>
-                              <p className={dark ? 'textBlue' : 'textGreen'}>Completed </p>
-                              <span>{completed} of {tasksQuantity} </span>
-                         </div> : ""}
-               </header>
 
+               <div className={editTodo ? "blur" : ""}>
+                    <header className='head'>
+                         <div>
+                              <p className={dark ? 'textBlue' : 'textGreen'}>Tasks :</p>
+                              {tasksQuantity ? <span>{tasksQuantity}</span> : <p className={dark ? '' : 'black-text'}>No Tasks</p>}
+                         </div>
+                         {tasksQuantity ?
+                              <div>
+                                   <p className={dark ? 'textBlue' : 'textGreen'}>Completed </p>
+                                   <span>{completed} of {tasksQuantity} </span>
+                              </div> : ""}
+
+                    </header>
+               </div>
 
                <div className="list">
                     {tasks.map(task => (

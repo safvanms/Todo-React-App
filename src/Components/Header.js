@@ -5,7 +5,7 @@ import { HiMoon } from 'react-icons/hi';
 import { BsSunFill } from 'react-icons/bs';
 import '../Components/header.css';
 
-export default function Header({ tasks, onAddTask, dark, darkMode, editTodo, setEditTodo }) {
+export default function Header({ tasks, onAddTask, dark, darkMode, editTodo, setEditTodo , setTasks }) {
 
 
 
@@ -17,7 +17,7 @@ export default function Header({ tasks, onAddTask, dark, darkMode, editTodo, set
           const newTodo = tasks.map((task) =>
                task.id === taskId ? { title, taskId, isCompleted } : task
           )
-          setTitle(newTodo);
+          setTasks(newTodo);
           setEditTodo("");
      }
 
@@ -25,7 +25,7 @@ export default function Header({ tasks, onAddTask, dark, darkMode, editTodo, set
           if (editTodo) {
                setTitle(editTodo.title)
           } else {
-               setTitle('')
+               setTitle('') 
           }
      }, [setTitle, editTodo])
 
@@ -36,13 +36,12 @@ export default function Header({ tasks, onAddTask, dark, darkMode, editTodo, set
                onAddTask(title);
                setTitle('');
           } else {
-               updateTodo( title, editTodo.id, editTodo.isCompleted )
+               updateTodo(title, editTodo.id, editTodo.isCompleted)
                setTitle('');
-
                console.log("0000000000,", title)
                console.log(title, editTodo.id, editTodo.isCompleted)
           }
-          
+
      }
 
 
@@ -76,18 +75,28 @@ export default function Header({ tasks, onAddTask, dark, darkMode, editTodo, set
                >
 
 
-                         <input
-                              placeholder='Add a new task'
-                              value={title}
-                              onChange={onChangeTitle}
-                              required
-                         />
+                    <input
+                         placeholder='Add a new task'
+                         value={title}
+                         onChange={onChangeTitle}
+                         required
+                    />
 
-                   
+
                     {
-                         title ? <button className={editTodo ? "grn-btn" : 'blue-btn'}>Add<AiOutlinePlusCircle size={20} /> </button> : ''
+                         title ?
+                              <button
+                                   className={editTodo ? "grn-btn" : 'blue-btn'}
+                              >
+                                   Add
+                                   {
+                                        editTodo ? "" : < AiOutlinePlusCircle size={20}
+                                        />
+                                   }
+                              </button>
+                              : ''
                     }
-          
+
 
                </form>
 
