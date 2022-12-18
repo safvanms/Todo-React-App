@@ -38,8 +38,7 @@ export default function Header({ tasks, onAddTask, dark, darkMode, editTodo, set
           } else {
                updateTodo(title, editTodo.id, editTodo.isCompleted)
                setTitle('');
-               console.log("0000000000,", title)
-               console.log(title, editTodo.id, editTodo.isCompleted)
+
           }
 
      }

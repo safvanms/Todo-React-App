@@ -45,7 +45,6 @@ function App() {
     function handleEdit(taskId) {
         const findTask = tasks.find((task) => task.id === taskId);
         setEditTodo(findTask);
-        console.log("edit clicked");
 
     }
 
